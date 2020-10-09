@@ -1,0 +1,30 @@
+[global_config]
+  borderless = True
+  scroll_tabbar = True
+  homogeneous_tabbar = False
+  hide_from_taskbar = True
+  sticky = True
+  use_custom_url_handler = True
+  always_split_with_profile = True
+  title_use_system_font = False
+  title_font = Fira Code weight=450 9
+[keybindings]
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_darkness = 0.61
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
