@@ -27,13 +27,13 @@ case $desktop in
     polybar --reload top -c ~/.config/polybar/config-top.ini &
     fi
     # second polybar at bottom
-    if type "xrandr" > /dev/null; then
-      for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload bottom -c ~/.config/polybar/config-bottom.ini &
-      done
-    else
-    polybar --reload bottom -c ~/.config/polybar/config-bottom.ini &
-    fi
+    # if type "xrandr" > /dev/null; then
+    #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    #     MONITOR=$m polybar --reload top-extra -c ~/.config/polybar/config-top.ini &
+    #   done
+    # else
+    # polybar --reload top-extra -c ~/.config/polybar/config-top.ini &
+    # fi
     ;;
 
     openbox|/usr/share/xsessions/openbox)

@@ -32,7 +32,7 @@ case $desktop in
         MONITOR=$m polybar --reload bottom -c ~/.config/polybar/config-bottom.ini &
       done
     else
-    polybar --reload bottom -c ~/.config/polybar/config-bottom.ini &
+    polybar --reload bo-extra -c ~/.config/polybar/config-bo.ini &
     fi
     ;;
 

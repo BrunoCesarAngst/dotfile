@@ -21,91 +21,91 @@ case $desktop in
     i3|/usr/share/xsessions/i3)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload top -c ~/.config/polybar/config-top.ini &
+        MONITOR=$m polybar --reload mainbar-i3 -c ~/.config/polybar/config-tp &
       done
     else
-    polybar --reload top -c ~/.config/polybar/config-top.ini &
+    polybar --reload mainbar-i3 -c ~/.config/polybar/config-tp &
     fi
     # second polybar at bottom
-    if type "xrandr" > /dev/null; then
-      for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload bottom -c ~/.config/polybar/config-bottom.ini &
-      done
-    else
-    polybar --reload bottom -c ~/.config/polybar/config-bottom.ini &
-    fi
+    # if type "xrandr" > /dev/null; then
+    #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    #     MONITOR=$m polybar --reload mainbar-i3-extra -c ~/.config/polybar/config-tp &
+    #   done
+    # else
+    # polybar --reload mainbar-i3-extra -c ~/.config/polybar/config-tp &
+    # fi
     ;;
 
     openbox|/usr/share/xsessions/openbox)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-openbox -c ~/.config/polybar/config-top.ini &
+        MONITOR=$m polybar --reload mainbar-openbox -c ~/.config/polybar/config-tp &
       done
     else
-    polybar --reload mainbar-openbox -c ~/.config/polybar/config-top.ini &
+    polybar --reload mainbar-openbox -c ~/.config/polybar/config-tp &
     fi
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
     #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    #     MONITOR=$m polybar --reload mainbar-openbox-extra -c ~/.config/polybar/config-top.ini &
+    #     MONITOR=$m polybar --reload mainbar-openbox-extra -c ~/.config/polybar/config-tp &
     #   done
     # else
-    # polybar --reload mainbar-openbox-extra -c ~/.config/polybar/config-top.ini &
+    # polybar --reload mainbar-openbox-extra -c ~/.config/polybar/config-tp &
     # fi
     ;;
 
     bspwm|/usr/share/xsessions/bspwm)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-bspwm -c ~/.config/polybar/config-top.ini &
+        MONITOR=$m polybar --reload mainbar-bspwm -c ~/.config/polybar/config-tp &
       done
     else
-    polybar --reload mainbar-bspwm -c ~/.config/polybar/config-top.ini &
+    polybar --reload mainbar-bspwm -c ~/.config/polybar/config-tp &
     fi
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
     #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    #     MONITOR=$m polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config-top.ini &
+    #     MONITOR=$m polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config-tp &
     #   done
     # else
-    # polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config-top.ini &
+    # polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config-tp &
     # fi
     ;;
 
     herbstluftwm|/usr/share/xsessions/herbstluftwm)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-herbstluftwm -c ~/.config/polybar/config-top.ini &
+        MONITOR=$m polybar --reload mainbar-herbstluftwm -c ~/.config/polybar/config-tp &
       done
     else
-    polybar --reload mainbar-herbstluftwm -c ~/.config/polybar/config-top.ini &
+    polybar --reload mainbar-herbstluftwm -c ~/.config/polybar/config-tp &
     fi
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
     #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    #     MONITOR=$m polybar --reload mainbar-herbstluftwm-extra -c ~/.config/polybar/config-top.ini &
+    #     MONITOR=$m polybar --reload mainbar-herbstluftwm-extra -c ~/.config/polybar/config-tp &
     #   done
     # else
-    # polybar --reload mainbar-herbstluftwm-extra -c ~/.config/polybar/config-top.ini &
+    # polybar --reload mainbar-herbstluftwm-extra -c ~/.config/polybar/config-tp &
     # fi
     ;;
 
     xmonad|/usr/share/xsessions/xmonad)
     if [ $count = 1 ]; then
       m=$(xrandr --query | grep " connected" | cut -d" " -f1)
-      MONITOR=$m polybar --reload mainbar-xmonad -c ~/.config/polybar/config-top.ini &
+      MONITOR=$m polybar --reload mainbar-xmonad -c ~/.config/polybar/config-tp &
     else
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-xmonad -c ~/.config/polybar/config-top.ini &
+        MONITOR=$m polybar --reload mainbar-xmonad -c ~/.config/polybar/config-tp &
       done
     fi
     # second polybar at bottom
     # if [ $count = 1 ]; then
     #   m=$(xrandr --query | grep " connected" | cut -d" " -f1)
-    #   MONITOR=$m polybar --reload mainbar-xmonad-extra -c ~/.config/polybar/config-top.ini &
+    #   MONITOR=$m polybar --reload mainbar-xmonad-extra -c ~/.config/polybar/config-tp &
     # else
     #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    #     MONITOR=$m polybar --reload mainbar-xmonad-extra -c ~/.config/polybar/config-top.ini &
+    #     MONITOR=$m polybar --reload mainbar-xmonad-extra -c ~/.config/polybar/config-tp &
     #   done
     # fi
     ;;
@@ -113,10 +113,10 @@ case $desktop in
     spectrwm|/usr/share/xsessions/spectrwm)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-spectrwm -c ~/.config/polybar/config-top.ini &
+        MONITOR=$m polybar --reload mainbar-spectrwm -c ~/.config/polybar/config-tp &
       done
     else
-    polybar --reload mainbar-spectrwm -c ~/.config/polybar/config-top.ini &
+    polybar --reload mainbar-spectrwm -c ~/.config/polybar/config-tp &
     fi
     ;;
 

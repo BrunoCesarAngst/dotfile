@@ -101,6 +101,7 @@ alias polybarcfg="code ~/.config/polybar/launch.sh"
 alias conkycfg="code ~/meuConky"
 alias picomcfg="code ~/.config/picom/picom.conf"
 alias dotfile='/usr/bin/git --git-dir=/home/bruno/.dotfile/ --work-tree=/home/bruno'
+alias allDotfile='dotfile add meuConky .zshrc .bashrc ~/.config/terminator/config ~/.config/polybar ~/.config/picom/picom.conf ~/.config/i3/config && git commit -a && git push'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ### Added by Zinit's installer
